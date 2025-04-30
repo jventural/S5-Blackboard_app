@@ -116,7 +116,7 @@ ui <- dashboardPage(
       # ---- Gráfico de Barras ----
       tabItem(tabName="grafico",
               fluidRow(
-                box(title="Controles Gráfico", status="warning", solidHeader=TRUE, collapsible=TRUE, width=6,
+                box(title="Controles Gráfico", status="warning", solidHeader=TRUE, collapsible=TRUE, width=3,
                     pickerInput("clase_seleccionada", "🔎 Sesión:", choices=NULL, options=list(`live-search`=TRUE), width="100%"),
                     pickerInput("metrica_seleccionada", "📊 Métrica:",
                                 choices=c("Chat"="Participaciones","Longitud"="longitud","Micrófono"="Microfono","Webcam"="Webcam"),
@@ -124,7 +124,7 @@ ui <- dashboardPage(
                     br(),
                     progressBar(id="prog_plot", value=0, total=100, display_pct=TRUE)
                 ),
-                box(title="Gráfico de Barras", status="warning", solidHeader=TRUE, collapsible=TRUE, width=6,
+                box(title="Gráfico de Barras", status="warning", solidHeader=TRUE, collapsible=TRUE, width=9,
                     plotOutput("grafico_barras", height="600px"), br(),
                     downloadButton("download_plot", "⬇️ Descargar")
                 )
