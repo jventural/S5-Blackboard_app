@@ -258,7 +258,7 @@ server <- function(input, output, session) {
     ggplot(df,aes(x=reorder(Nombre,!!sym(input$metrica_seleccionada)),y=!!sym(input$metrica_seleccionada)))+
       geom_text(aes(label = !!sym(input$metrica_seleccionada)),
                 hjust = -0.1,                                  # tira el texto un poco a la derecha
-                size  = 5) +                                   # tamaño de la etiqueta
+                size  = 3.5) +                                   # tamaño de la etiqueta
       geom_col(fill="#713f8e")+coord_flip()+theme_minimal()+
       theme(
         axis.text.x = element_text(size = 12),  # tamaño texto eje X
