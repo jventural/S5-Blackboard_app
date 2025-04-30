@@ -261,7 +261,7 @@ server <- function(input, output, session) {
                 size  = 3.5) +                                   # tamaño de la etiqueta
       geom_col(fill="#713f8e")+coord_flip()+theme_minimal()+
       theme(
-        axis.text.x = element_text(size = 12),  # tamaño texto eje X
+        axis.text.x = element_text(size = 10),  # tamaño texto eje X
         axis.text.y = element_text(size = 12),  # tamaño texto eje Y
         axis.title  = element_text(size = 14)   # tamaño títulos de ejes si los tuvieras
       ) +
