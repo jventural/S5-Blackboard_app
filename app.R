@@ -125,7 +125,7 @@ ui <- dashboardPage(
                     progressBar(id="prog_plot", value=0, total=100, display_pct=TRUE)
                 ),
                 box(title="Gráfico de Barras", status="warning", solidHeader=TRUE, collapsible=TRUE, width=6,
-                    plotOutput("grafico_barras", height="400px"), br(),
+                    plotOutput("grafico_barras", height="600px"), br(),
                     downloadButton("download_plot", "⬇️ Descargar")
                 )
               )
