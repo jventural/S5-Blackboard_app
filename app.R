@@ -256,7 +256,16 @@ server <- function(input, output, session) {
     for(i in seq(0,100,by=25)){updateProgressBar(session,"prog_plot",value=i);Sys.sleep(0.01)}
     df <- datos_originales()%>%filter(Clase==input$clase_seleccionada)
     ggplot(df,aes(x=reorder(Nombre,!!sym(input$metrica_seleccionada)),y=!!sym(input$metrica_seleccionada)))+
-      geom_col(fill="#6a1b9a")+coord_flip()+theme_minimal()+labs(x=NULL,y=NULL)
+      geom_text(aes(label = !!sym(input$metrica_seleccionada)),
+                hjust = -0.1,                                  # tira el texto un poco a la derecha
+                size  = 5) +                                   # tamaño de la etiqueta
+      geom_col(fill="#713f8e")+coord_flip()+theme_minimal()+
+      theme(
+        axis.text.x = element_text(size = 14),  # tamaño texto eje X
+        axis.text.y = element_text(size = 14),  # tamaño texto eje Y
+        axis.title  = element_text(size = 16)   # tamaño títulos de ejes si los tuvieras
+      ) +
+      labs(x=NULL,y=NULL)
   })
   output$download_plot <- downloadHandler(
     filename=function()paste0("Grafico_Barras_",input$clase_seleccionada,"_",Sys.Date(),".jpg"),
