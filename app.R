@@ -269,7 +269,7 @@ server <- function(input, output, session) {
   })
   output$download_plot <- downloadHandler(
     filename=function()paste0("Grafico_Barras_",input$clase_seleccionada,"_",Sys.Date(),".jpg"),
-    content=function(file) ggsave(file,plot=last_plot(),device="jpg",width=10,height=8)
+    content=function(file) ggsave(file,plot=last_plot(),device="jpg",width=12,height=8)
   )
   
   # Normas editable
