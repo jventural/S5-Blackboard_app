@@ -63,7 +63,7 @@ calcular_metricas <- function(datos, palabras_clave, columna) {
 # ========================================
 ui <- dashboardPage(
   dashboardHeader(
-    title = tagList(icon("chalkboard"), "S5-Blackboard")
+    title = tagList(icon("chalkboard"), "S4-Blackboard")
   ),
   dashboardSidebar(
     sidebarMenu(
